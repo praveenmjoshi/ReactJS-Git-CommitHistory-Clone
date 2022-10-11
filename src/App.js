@@ -11,7 +11,7 @@ function App() {
         <Routes>
             <Route path='/login' element={<Login />} />
             <Route
-            path="/commits"
+            path="/"
             element={
               <PrivateRoute>
                 <CommitHistory />

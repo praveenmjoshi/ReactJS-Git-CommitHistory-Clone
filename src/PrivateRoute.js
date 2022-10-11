@@ -5,7 +5,6 @@ function PrivateRoute({ children }) {
 
     let isLoggedIn = false;
     const userToken = localStorage.getItem('personalKey');
-    console.log('userToken',userToken)
     if(userToken) isLoggedIn = true;
 
     if (!isLoggedIn) {

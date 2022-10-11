@@ -5,7 +5,7 @@ export const getCommits = async() =>{
         const octoKit = initializeOctoKit();
         const response = await octoKit.request('GET /repos/{owner}/{repo}/commits', {
             owner: 'praveenmjoshi',
-            repo: 'github-commit-history-app'
+            repo: 'git-commit-history'
           })
         return response.data || []
     }catch(error){

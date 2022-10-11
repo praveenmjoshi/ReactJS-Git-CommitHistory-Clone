@@ -17,14 +17,13 @@ function Login() {
     useEffect(() =>{
 
         const key = localStorage.getItem('personalKey');
-        console.log('key ==>', key)
         if(!key){
             setShow(true);
         }else{
             navigate(from);   
         } 
         
-    }, [])
+    }, [from, navigate])
 
     const onSubmit = () =>{
         localStorage.setItem('personalKey', personalkey)

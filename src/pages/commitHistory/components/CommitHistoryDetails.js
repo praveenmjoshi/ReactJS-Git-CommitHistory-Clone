@@ -17,12 +17,12 @@ function CommitHistoryDetails({commitList}) {
     <div className='mt-2'>
         {
             
-            commitList.map((commit, index) => (
+            commitList.map((commitRec, index) => (
                 <CardComp key={index}>
-                    <TextComp text={commit.message} font_weight={500} font_size='18px' font_color='black'></TextComp>
+                    <a className="commit-msg-txt" href={commitRec.html_url} target="_blank" rel="noreferrer">{commitRec.commit?.message || ''}</a>
                     <div style={{display:'flex'}} className="mt-1">
-                        <TextComp text={formatDate(commit.author.date)} />
-                        <TextComp text={formateCommitterName(commit.author.name)} font_weight={500} mx={5}/>
+                        <TextComp text={formatDate(commitRec.commit.author.date)} />
+                        <TextComp text={formateCommitterName(commitRec.commit.author.name)} font_weight={500} mx={5}/>
                     </div>
                 </CardComp>
             ))

@@ -18,6 +18,9 @@ input:focus, .branch-select:focus {
 .mt-1{ margin-top: 1rem!important;}
 .mt-2{ margin-top: 2rem!important;}
 
+.gray-hover{ cursor: pointer;}
+.gray-hover:hover{ background: #E7E9EB;}
+
 .modal-popup .title{
   font-size: 18px!important;
 }
@@ -33,4 +36,28 @@ input:focus, .branch-select:focus {
   padding: 2rem;
   margin: 2rem;
   background: #E7E9EB;
+  overflow: auto;
+}
+
+.commit-msg-txt{
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+
+.branch-details-container{
+    display: inline-flex;
+    width: 100%;
+    position: relative;
+}
+
+.counter{
+  margin: 10px;
+  font-weight: 700;
+}
+
+.refresh-btn{
+  position: absolute;
+  right: 0;
 }
