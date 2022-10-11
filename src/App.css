@@ -18,6 +18,16 @@ input:focus, .branch-select:focus {
 .mt-1{ margin-top: 1rem!important;}
 .mt-2{ margin-top: 2rem!important;}
 
+.modal-popup .title{
+  font-size: 18px!important;
+}
+
+.text-element{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .commit-hist-container{
   height: calc(100vh - 4rem);
   padding: 2rem;
