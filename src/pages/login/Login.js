@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Login() {
+    let location = useLocation();
+    let navigate = useNavigate();
+    let { from } = location.state || { from: { pathname: "/" } };
+
     const [ show, setShow ] = useState(false);
     const closeModal = () => setShow(false);
-    const openModal = () => setShow(true);
 
     const [ personalkey, setPersonalKey] = useState('')
     const personalKeyChange = (e) => setPersonalKey(e.target.value);
@@ -13,14 +17,19 @@ function Login() {
     useEffect(() =>{
 
         const key = localStorage.getItem('personalKey');
+        console.log('key ==>', key)
         if(!key){
             setShow(true);
-        }     
-    })
+        }else{
+            navigate(from);   
+        } 
+        
+    }, [])
 
     const onSubmit = () =>{
         localStorage.setItem('personalKey', personalkey)
         setShow(false);
+        navigate(from);
     }
 
   return (

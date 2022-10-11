@@ -18,7 +18,7 @@ function CommitHistoryDetails({commitList}) {
         {
             
             commitList.map((commit, index) => (
-                <CardComp >
+                <CardComp key={index}>
                     <TextComp text={commit.message} font_weight={500} font_size='18px' font_color='black'></TextComp>
                     <div style={{display:'flex'}} className="mt-1">
                         <TextComp text={formatDate(commit.author.date)} />

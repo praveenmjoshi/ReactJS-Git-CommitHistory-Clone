@@ -8,7 +8,7 @@ import { getCommits } from '../../common/util/httpService';
 function CommitHistory() {
 
     const [ commitDetails, setCommitDetails ] = useState([]);
-
+  
     const getCommitHistry = async() =>{
       const response = await getCommits();
       const data = response.map((item) => item.commit)
@@ -16,12 +16,12 @@ function CommitHistory() {
     }
 
     useEffect(()=>{
+      setCommitDetails([])
       getCommitHistry();
     }, [])
     
   return (
     <div className='commit-hist-container'>
-        <Login />
         <BranchDetails />
         <CommitHistoryDetails commitList={commitDetails}/>
     </div>
